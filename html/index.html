@@ -84,6 +84,13 @@
                 as seconds.
               </td>
               <td>false</td>
+            </tr><tr>
+              <td>onComplete</td>
+              <td>
+                Function that will be triggered when the timer completes.
+                For use if you want to say, add a sound...
+              </td>
+              <td>false</td>
             </tr>
           </tbody>
         </table>
@@ -144,7 +151,8 @@
   radius      : 50.5,
   strokeWidth : 10,
   intervals   : [10,20,30,60,90,120],
-  seconds     : true
+  seconds     : true,
+  onComplete  : function () { alert("Pomodoro Complete!!!") }
 });</pre></code>
 			</p>
 			<div id="timer4"></div>
@@ -153,7 +161,8 @@
        	 radius      : 50.5,
        	 strokeWidth : 10,
        	 intervals   : [10,20,30,60,90,120],
-         seconds     : true
+         seconds     : true,
+         onComplete  : function () { alert("Pomodoro Complete!!!") }
 		   });
 		  </script>
 		</div>
