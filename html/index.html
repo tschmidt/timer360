@@ -77,6 +77,15 @@
               <td>[5,25,30]</td>
             </tr>
             <tr>
+              <td>interval</td>
+              <td>
+                If set will start the timer immediately for the specified
+                interval. If you would like to use this option you will
+                need to set intervals to an empty array.
+              </td>
+              <td>10</td>
+            </tr>
+            <tr>
               <td>seconds</td>
               <td>
                 Boolean value. If set to false then interval is assumed
@@ -89,6 +98,14 @@
               <td>
                 Function that will be triggered when the timer completes.
                 For use if you want to say, add a sound...
+              </td>
+              <td>false</td>
+            </tr>
+            <tr>
+              <td>loop</td>
+              <td>
+                Setting this option to true will allow the timer to loop
+                instead of stopping at the desired interval.
               </td>
               <td>false</td>
             </tr>
@@ -110,32 +127,44 @@
 			<script type="text/javascript" charset="utf-8">
 		   $("#timer1").timer360();
 		  </script>
+		  
+		  <p>
+        You can choose to have the timer start automatically as well by
+        specifying just a single interval
+      </p>
+      <p>
+			  <code><pre>$("#timer2").timer360({ interval : 10, intervals : [] });</pre></code>
+			</p>
+			<div id="timer2"></div>
+			<script type="text/javascript" charset="utf-8">
+		   $("#timer2").timer360({ interval : 10, intervals : [] });
+		  </script>
 		
 		  <p>
         What's that? You'd rather have that in seconds than in minutes?
         No problem!
       </p>
       <p>
-			  <code><pre>$("#timer2").timer360({ seconds : true });</pre></code>
+			  <code><pre>$("#timer3").timer360({ seconds : true });</pre></code>
 			</p>
-			<div id="timer2"></div>
+			<div id="timer3"></div>
 			<script type="text/javascript" charset="utf-8">
-		   $("#timer2").timer360({ seconds : true });
+		   $("#timer3").timer360({ seconds : true });
 		  </script>
 		  
 		  <p>
         How about we change up the color.
       </p>
       <p>
-			  <code><pre>$("#timer3").timer360({
+			  <code><pre>$("#timer4").timer360({
   fillColor   : "#1967F7",
   strokeColor : "#00215E",
   seconds     : true
 });</pre></code>
 			</p>
-			<div id="timer3"></div>
+			<div id="timer4"></div>
 			<script type="text/javascript" charset="utf-8">
-		   $("#timer3").timer360({
+		   $("#timer4").timer360({
 		     fillColor   : "#1967F7",
          strokeColor : "#00215E",
          seconds     : true
@@ -147,7 +176,7 @@
         set some different time intervals.
       </p>
       <p>
-			  <code><pre>$("#timer4").timer360({
+			  <code><pre>$("#timer5").timer360({
   radius      : 50.5,
   strokeWidth : 10,
   intervals   : [10,20,30,60,90,120],
@@ -155,14 +184,41 @@
   onComplete  : function () { alert("Pomodoro Complete!!!") }
 });</pre></code>
 			</p>
-			<div id="timer4"></div>
+			<div id="timer5"></div>
 			<script type="text/javascript" charset="utf-8">
-		   $("#timer4").timer360({
+		   $("#timer5").timer360({
        	 radius      : 50.5,
        	 strokeWidth : 10,
        	 intervals   : [10,20,30,60,90,120],
          seconds     : true,
          onComplete  : function () { alert("Pomodoro Complete!!!") }
+		   });
+		  </script>
+		  
+		  <p>
+        You may also choose to have the timer loop instead of finishing
+        at the selected interval.
+      </p>
+      <p>
+			  <code><pre>$("#timer6").timer360({
+  radius      : 50.5,
+  strokeWidth : 10,
+  intervals   : [],
+  seconds     : true,
+  loop        : true,
+  onComplete  : function () { $('&lt;p&gt;Timer Completed&lt;/p&gt;').appendTo($('#loop_messages')) }
+});</pre></code>
+			</p>
+      <div id="loop_messages"></div>
+			<div id="timer6"></div>
+			<script type="text/javascript" charset="utf-8">
+		   $("#timer6").timer360({
+       	 radius      : 50.5,
+       	 strokeWidth : 10,
+       	 intervals   : [],
+         seconds     : true,
+         loop        : true,
+         onComplete  : function () { $('<p>Timer Completed</p>').appendTo($('#loop_messages')) }
 		   });
 		  </script>
 		</div>
