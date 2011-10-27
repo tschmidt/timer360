@@ -1,18 +1,18 @@
-/* 
+/*
 
 	Base
-	
+
 	Author:			Terry Schmidt
 	Date:				27 Feb, 2007
-	
+
 	Description:
 	===============================================================
 	The Base stylesheet will set some standard defaults for
-	the website. This will help eliminate the need to create this 
+	the website. This will help eliminate the need to create this
 	everytime you want to start a new site.
-	
+
 	**Information in this file should not be altered in any way. If
-	  you need to change the way one of these settings performs you 
+	  you need to change the way one of these settings performs you
 	  should create a separate CSS file to store your modifications
 	  (e.g. skin.css, site.css, application.css, etc).
 
@@ -29,15 +29,15 @@ body {
 	particular font size. This table is based on the CSS foundation
 	defined above. If you change the default font size from 13px to
 	something else these percentages will not longer be valid.
-	
+
 	To convert pixel to percentage use the following example:
-	
+
 	[desired_pixel] / [base_pixel] * 100 = [declared_percent]
-	
+
 	Example:
-	
+
 		10 / 13 * 100 = 76.92
-	
+
 	If you want this size in pixels (px)  	Declare this percent (%)
 	=================================================================
 		10 										76.9
@@ -67,12 +67,12 @@ h1 {
 
 h2 {
 	/*22px via CSS foundation*/
-	font-size: 167%; 
+	font-size: 167%;
 }
 
 h3 {
 	/*19px via CSS foundation*/
-	font-size: 146.5%;  
+	font-size: 146.5%;
 }
 
 h1,h2,h3 {
@@ -80,14 +80,14 @@ h1,h2,h3 {
 }
 
 h1,h2,h3,h4,h5,h6,strong {
-	font-weight: bold; 
+	font-weight: bold;
 	line-height: 1;
 }
 
 abbr,acronym {
 	border-bottom: 1px dotted #000;
 	cursor: help;
-} 
+}
 
 em {
 	font-style: italic;
@@ -102,7 +102,7 @@ ol,ul,dl {
 }
 
 ol li {
-	list-style: decimal outside;	
+	list-style: decimal outside;
 }
 
 ul li {

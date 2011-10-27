@@ -1,8 +1,8 @@
-/* 
+/*
 
 	Skin
 
-	Author:			
+	Author:
 	Date:			  15 Dec, 2009
 
 	Description:
@@ -96,7 +96,7 @@ table td:nth-child(3) {
 		padding: 0;
 		list-style: none;
 	}
-	
+
 	.timer_select ul li {
 		cursor: pointer;
 		padding: 5px 0;
