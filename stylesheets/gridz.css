@@ -1,0 +1,81 @@
+/*
+ 
+  Gridz
+  
+  Author:		Terry Schmidt
+  Date:			21 Oct, 2008
+    
+*/
+
+.row,
+.lastGrid {
+	overflow: hidden;
+	_overflow: visible;
+	zoom: 1;
+	width: auto !important;
+}
+
+.column {
+	float: left;
+	zoom: 1;
+}
+
+/*
+===============================================================================
+	Column Classes
+===============================================================================
+*/
+
+.grid1of1 {
+	float: none;
+}
+
+.grid1of2 {
+	width: 50%;
+	_width: 49.9% !important;
+}
+
+.grid1of3 {
+	width: 33.332%;
+	_width: 33.25% !important;
+}
+
+.grid2of3 {
+	width: 66.665%;
+	_width: 66.65% !important;
+}
+
+.grid1of4 {
+	width:25%;
+	_width:24.95% !important;
+}
+
+.grid2of4 {
+	width: 50%;
+	_width: 49.9% !important;
+}
+
+.grid3of4 {
+	width:75%;
+	_width:74.95% !important;
+}
+
+.grid1of5 {
+	width:20%;
+	_width:19.95% !important;
+}
+
+.grid2of5 {
+	width:40%;
+	_width:39.95% !important;
+}
+
+.grid3of5 {
+	width:60%;
+	_width:59.95% !important;
+}
+
+.grid4of5 {
+	width:80%;
+	_width:79.95% !important;
+}

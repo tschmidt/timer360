@@ -1,0 +1,227 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+		<title>timer360</title>
+
+		<link rel="stylesheet" href="stylesheets/application.css" type="text/css" media="screen" title="no title" charset="utf-8">
+		<script src="javascripts/jquery-1.3.2.js" type="text/javascript" charset="utf-8"></script>
+    
+    <script src="javascripts/jquery.easing-1.3.js" type="text/javascript" charset="utf-8"></script>
+		<script src="javascripts/jquery.form-2.28.js" type="text/javascript" charset="utf-8"></script>
+		<script src="javascripts/jquery.ekko-0.1.js" type="text/javascript" charset="utf-8"></script>
+		  
+		<script src="javascripts/jquery.timer360.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+
+	<body>
+		<div id="container">
+			<h1 id="pagetitle">jQuery Plugin: <span>timer360</span></h1>
+
+			<h2>Description</h2>
+			<p>
+			  <em>timer360</em> was inspired by the "time remaining" animation
+			  that you see in iTunes 9 while playing a sample of music. I
+			  was working on a project that needed a countdown timer and I
+			  thought, what the hell...why not try and emulate that. Thus was
+			  born the timer360.
+			</p>
+			
+			<p>
+			 This timer is as customizable as you can get. It allows you to
+			 specify everything form the size of the timer to the increments
+			 and colors. How is this done you ask? Flash? Nope. This is using
+			 only the HTML5 canvas tag. Scroll down to check it out.
+			</p>
+
+			<h2>Options</h2>
+			<p>
+        <table>
+          <thead>
+            <tr>
+              <th>name</th>
+              <th>description</th>
+              <th>default</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>radius</td>
+              <td>Sets the radius of the arc</td>
+              <td>15.5</td>
+            </tr>
+            <tr>
+              <td>strokeWidth</td>
+              <td>Sets the size of the stroke</td>
+              <td>3</td>
+            </tr>
+            <tr>
+              <td>strokeColor</td>
+              <td>Sets the color for the stroke</td>
+              <td>#477050</td>
+            </tr>
+            <tr>
+              <td>fillColor</td>
+              <td>Sets the color for the arc fill</td>
+              <td>#8ac575)</td>
+            </tr>
+            <tr>
+              <td>intervals</td>
+              <td>
+                An array of numbers representing the time intervals you
+                want the user to select from
+              </td>
+              <td>[5,25,30]</td>
+            </tr>
+            <tr>
+              <td>interval</td>
+              <td>
+                If set will start the timer immediately for the specified
+                interval. If you would like to use this option you will
+                need to set intervals to an empty array.
+              </td>
+              <td>10</td>
+            </tr>
+            <tr>
+              <td>seconds</td>
+              <td>
+                Boolean value. If set to false then interval is assumed
+                to be minutes. If set to true then interval is treated
+                as seconds.
+              </td>
+              <td>false</td>
+            </tr><tr>
+              <td>onComplete</td>
+              <td>
+                Function that will be triggered when the timer completes.
+                For use if you want to say, add a sound...
+              </td>
+              <td>false</td>
+            </tr>
+            <tr>
+              <td>loop</td>
+              <td>
+                Setting this option to true will allow the timer to loop
+                instead of stopping at the desired interval.
+              </td>
+              <td>false</td>
+            </tr>
+          </tbody>
+        </table>
+			</p>
+
+			<h2>Examples</h2>
+			
+      <p>
+        This is what you get by simply calling #timer360 without any
+        additional options. Click on the "circle" to access the timer
+        intervals. Once you select a value the timer will begin ticking.
+      </p>
+      <p>
+			  <code><pre>$("#timer1").timer360();</pre></code>
+			</p>
+			<div id="timer1"></div>
+			<script type="text/javascript" charset="utf-8">
+		   $("#timer1").timer360();
+		  </script>
+		  
+		  <p>
+        You can choose to have the timer start automatically as well by
+        specifying just a single interval
+      </p>
+      <p>
+			  <code><pre>$("#timer2").timer360({ interval : 10, intervals : [] });</pre></code>
+			</p>
+			<div id="timer2"></div>
+			<script type="text/javascript" charset="utf-8">
+		   $("#timer2").timer360({ interval : 10, intervals : [] });
+		  </script>
+		
+		  <p>
+        What's that? You'd rather have that in seconds than in minutes?
+        No problem!
+      </p>
+      <p>
+			  <code><pre>$("#timer3").timer360({ seconds : true });</pre></code>
+			</p>
+			<div id="timer3"></div>
+			<script type="text/javascript" charset="utf-8">
+		   $("#timer3").timer360({ seconds : true });
+		  </script>
+		  
+		  <p>
+        How about we change up the color.
+      </p>
+      <p>
+			  <code><pre>$("#timer4").timer360({
+  fillColor   : "#1967F7",
+  strokeColor : "#00215E",
+  seconds     : true
+});</pre></code>
+			</p>
+			<div id="timer4"></div>
+			<script type="text/javascript" charset="utf-8">
+		   $("#timer4").timer360({
+		     fillColor   : "#1967F7",
+         strokeColor : "#00215E",
+         seconds     : true
+		   });
+		  </script>
+		  
+		  <p>
+        Let's change the size of our little timer and while we're at it
+        set some different time intervals.
+      </p>
+      <p>
+			  <code><pre>$("#timer5").timer360({
+  radius      : 50.5,
+  strokeWidth : 10,
+  intervals   : [10,20,30,60,90,120],
+  seconds     : true,
+  onComplete  : function () { alert("Pomodoro Complete!!!") }
+});</pre></code>
+			</p>
+			<div id="timer5"></div>
+			<script type="text/javascript" charset="utf-8">
+		   $("#timer5").timer360({
+       	 radius      : 50.5,
+       	 strokeWidth : 10,
+       	 intervals   : [10,20,30,60,90,120],
+         seconds     : true,
+         onComplete  : function () { alert("Pomodoro Complete!!!") }
+		   });
+		  </script>
+		  
+		  <p>
+        You may also choose to have the timer loop instead of finishing
+        at the selected interval.
+      </p>
+      <p>
+			  <code><pre>$("#timer6").timer360({
+  radius      : 50.5,
+  strokeWidth : 10,
+  intervals   : [],
+  seconds     : true,
+  loop        : true,
+  onComplete  : function () { $('&lt;p&gt;Timer Completed&lt;/p&gt;').appendTo($('#loop_messages')) }
+});</pre></code>
+			</p>
+      <div id="loop_messages"></div>
+			<div id="timer6"></div>
+			<script type="text/javascript" charset="utf-8">
+		   $("#timer6").timer360({
+       	 radius      : 50.5,
+       	 strokeWidth : 10,
+       	 intervals   : [],
+         seconds     : true,
+         loop        : true,
+         onComplete  : function () { $('<p>Timer Completed</p>').appendTo($('#loop_messages')) }
+		   });
+		  </script>
+		</div>
+	</body>
+</html>
+    
