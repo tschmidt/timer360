@@ -1,25 +1,25 @@
-/* 
+/*
 
 	Reset
-	
+
 	Author:			Terry Schmidt
-	Date:				27 Sep, 2007 
-	
+	Date:				27 Sep, 2007
+
 	Description:
 	===============================================================
 	Reset will (and this should be obvious) "reset" the default
 	browser styles. This will allow you to (for the most part) write
 	css styles that will work consistantly across browsers. This MUST
 	be the first file you include for your css files.
-	
+
 	**Information in this file SHOULD NOT be altered in any way. If
-	  you need to change the way one of these settings performs you 
+	  you need to change the way one of these settings performs you
 	  should create a separate CSS file to store your modifications
 	  (e.g. skin.css, site.css, application.css, etc).
 
 */
 
-body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,fieldset,input,textarea,p,blockquote,th,td { 
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,fieldset,input,textarea,p,blockquote,th,td {
 	margin:0;
 	padding:0;
 }
@@ -29,7 +29,7 @@ table {
 	border-spacing:0;
 }
 
-fieldset,img { 
+fieldset,img {
 	border:0;
 }
 
